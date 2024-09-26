@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SoftwarianTeam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body style="background-color:#FFEEDD">
+    <header style="background-color: #FD8F2D; text-align: center; position: fixed; width: 100%; top: 0; left: 0; z-index: 999; ">
+
+       
+        <h1 style=" text-align: center; color: #FFEEDD; font-size: 24px; font-style: italic;">
+            Softwarian_Team
+        </h1>
+
+    </header>
+
+    <img src="img/Softwarian (1).png" style=" width: 75%; display: block; margin: 0 auto; z-index:-1; position: sticky; top: 0" />
+    <div style="background-color: #FFEEDD">
+        <div style="background-color: #FFDABB; width: 100%; color: #FA7D10; z-index:100; text-align: center; font-size: 50px; font-style: italic;">
+
+            <hr style="border: 2px solid #FD8F2D; width: 100%; margin: 20px auto;">
+            <div id="textContainer"></div>
+            <hr style="border: 2px solid #FD8F2D; width: 100%; margin: 20px auto;">
+        </div>
+
+        <script>
+            const text = "ننير دربكم بكل جميل";
+            const words = text.split(" ");
+            const container = document.getElementById("textContainer");
+
+            function showWords() {
+                container.innerHTML = '';
+                words.forEach((word, index) => {
+                    const span = document.createElement("span");
+                    span.textContent = word;
+                    span.style.opacity = 0;
+                    span.style.transition = "opacity 0.5s";
+                    span.style.margin = "0 5px";
+                    container.appendChild(span);
+
+
+                    setTimeout(() => {
+                        span.style.opacity = 1;
+                    }, index * 500);
+                });
+
+
+                setTimeout(() => {
+                    words.forEach((word, index) => {
+                        const span = container.children[index];
+                        span.style.opacity = 0;
+                    });
+                    setTimeout(showWords, 1000);
+                }, words.length * 500 + 1000);
+            }
+
+            showWords();
+
+        </script>
+
+        <hr style="border: 2px solid #FFEEDD; width: 50%; margin: 20px auto;">
+        <button style="display: block; margin: 0 auto; font-size: 24px; font-weight: bold; color: #FFEEDD; background-color: #FD8F2D; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 50%;" onclick="toggleImage()">
+            الخطة التفاعلية
+        </button>
+
+        <img id="dynamicImage" src="img/SE1.jpg" style="width: 50%; display: none; margin: 20px auto; opacity: 0; transform: translateY(-20px); transition: opacity 1s ease, transform 1s ease;" />
+
+        <script>
+            function toggleImage() {
+                const img = document.getElementById('dynamicImage');
+                if (img.style.display === 'none' || img.style.display === '') {
+                    img.style.display = 'block';
+                    setTimeout(() => {
+                        img.style.opacity = 1;
+                        img.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    img.style.opacity = 0;
+                    img.style.transform = 'translateY(-20px)';
+                    setTimeout(() => {
+                        img.style.display = 'none';
+                    }, 1000);
+                }
+            }
+        </script>
+        <hr style="border: 2px solid #FFEEDD; width: 50%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 50%; margin: 20px auto;">
+
+        <div style="color: #FD8F2D; font-weight: bold; font-size: 24px; text-align: center ">السنة الدراسية الأولى</div>
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <form style="display: flex; justify-content: space-evenly; align-items: center;">
+            <div style="background-color: #FD8F2D; padding: 10px; border-radius: 5px; margin-right: 10px; border: 2px solid #FD8F2D;">
+
+                <select id="dropdown1" style="font-size: 24px; padding: 5px 10px;  background-color: #FD8F2D; color: #FFEEDD; border: none; border-radius: 5px;">
+                    <option value="#" style="text-align:center; color: #FFEEDD;">الفصل الدراسي الأول</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y1C.html" style=" text-align: center;">مقدمة في البرمجة</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y1I.html" style=" text-align: center;">مقدمة الى تكنولوجيا المعلومات</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y1CAL.html" style=" text-align: center;">تفاضل وتكامل 1</option>
+                </select>
+
+            </div>
+
+            <div style="background-color: #FD8F2D; padding: 10px; border-radius: 5px; border: 2px solid #FD8F2D; ">
+                <select id="dropdown2" style="font-size: 24px; padding: 5px 10px;  background-color: #FD8F2D; color: #FFEEDD; border: none; border-radius: 5px;">
+                    <option value="#" style="text-align:center; color: #FFEEDD;">الفصل الدراسي الثاني</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y1O.html" style=" text-align: center;">
+                        مقدمة في البرمجة الكينونية
+
+                    </option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y1C2.html" style=" text-align: center;">تفاضل وتكامل 2</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y1.html" style=" text-align: center;">الرياضيات المتقطعه</option>
+                </select>
+            </div>
+        </form>
+
+        <script>
+            const dropdown1 = document.getElementById('dropdown1');
+            const dropdown2 = document.getElementById('dropdown2');
+
+            dropdown1.addEventListener('change', () => {
+                const selectedOption = dropdown1.value;
+                if (selectedOption && selectedOption !== '#') {
+                    window.location.href = selectedOption;
+                    dropdown1.value = '#';
+
+                }
+            });
+
+            dropdown2.addEventListener('change', () => {
+                const selectedOption = dropdown2.value;
+                if (selectedOption && selectedOption !== '#') {
+                    window.location.href = selectedOption;
+                    dropdown2.value = '#';
+                }
+            });
+        </script>
+        <!--///////////////////////////////////////////////////////////////////////////////-->
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FD8F2D; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <div style="color: #FD8F2D; font-weight: bold; font-size: 24px; text-align: center ">السنة الدراسية الثانية</div>
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+
+        <form style="display: flex; justify-content:space-evenly ;align-items: center; ">
+            <div style="background-color: #FD8F2D; padding: 10px; border-radius: 5px; margin-right: 10px; border: 2px solid #FD8F2D; ">
+                <select id="dropdown3" style="font-size: 18px; padding: 5px 10px; background-color: #FD8F2D; color: #FFEEDD; border: none; border-radius: 5px; font-size: 24px">
+                    <option style="text-align:center" value="#">الفصل الدراسي الأول</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y21.html" style=" text-align: center;">تصميم المنطق الرقمي </option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y22.html" style=" text-align: center;">تراكيب البيانيات</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y23.html" style=" text-align: center;"> تصميم صفحات الويب</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y24.html" style=" text-align: center;">البرمجة  بلغة الجافا </option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y25.html" style=" text-align: center;">نمذجة البرمجيات</option>
+                </select>
+            </div>
+
+            <div style="background-color: #FD8F2D; padding: 10px; border-radius: 5px; border: 2px solid #FD8F2D; ">
+                <select id="dropdown4" style="font-size: 18px; padding: 5px 10px; background-color: #FD8F2D; color:#FFEEDD; border: none; border-radius: 5px; font-size: 24px">
+                    <option style="text-align:center" value="#">الفصل الدراسي الثاني</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y26.html" style=" text-align: center;">تحليل وتصميم الخوازميات</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y27.html" style=" text-align: center;">مهارات الاتصال وأخلاقيات المهنة</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y28.html" style=" text-align: center;">أساسيات قواعد البيانات</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y29.html" style=" text-align: center;">أساسيات هندسة البرمجيات</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y210.html" style=" text-align: center;">احصاء واحتمالات لطلبة الحاسوب</option>
+                </select>
+            </div>
+        </form>
+        <script>
+            const dropdown3 = document.getElementById('dropdown3');
+            const dropdown4 = document.getElementById('dropdown4');
+
+            dropdown3.addEventListener('change', () => {
+                const selectedOption = dropdown3.value;
+                if (selectedOption !== '#') {
+                    window.location.href = selectedOption;
+                    dropdown3.value = '#';
+                }
+            });
+
+            dropdown4.addEventListener('change', () => {
+                const selectedOption = dropdown4.value;
+                if (selectedOption !== '#') {
+                    window.location.href = selectedOption;
+                    dropdown4.value = '#';
+                }
+            });
+        </script>
+        <!--/////////////////////////////////////////////////-->
+
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FD8F2D; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <div style="color: #FD8F2D; font-weight: bold; font-size: 24px; text-align: center ">السنة الدراسية الثالثة</div>
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+
+        <form style="display: flex; justify-content:space-evenly; align-items: center; ">
+            <div style="background-color: #FD8F2D; padding: 10px; border-radius: 5px; margin-right: 10px; border: 2px solid #FD8F2D; ">
+                <select id="dropdown5" style="font-size: 18px; padding: 5px 10px; background-color: #FD8F2D; color: #FFEEDD; border: none; border-radius: 5px; font-size: 24px">
+                    <option style="text-align:center" value="#">الفصل الدراسي الأول</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y31.html" style=" text-align: center;">تطوير تطبيقات الويب </option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y32.html" style=" text-align: center;">تراسل بيانات الاعمال</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y33.html" style=" text-align: center;"> البرمجة المرئية</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y34.html" style=" text-align: center;">تحليل وتصميم الأنظمة</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y35.html" style=" text-align: center;">توثيق البرمجيات</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y36.html" style=" text-align: center;">تحليل عددي</option>
+                </select>
+            </div>
+
+            <div style="background-color: #FD8F2D;padding: 10px; border-radius: 5px; border: 2px solid #FD8F2D; ">
+                <select id="dropdown6" style="font-size: 18px; padding: 5px 10px; background-color: #FD8F2D; color: #FFEEDD; border: none; border-radius: 5px; font-size: 24px">
+                    <option value="#" style=" text-align: center;">الفصل الدراسي الثاني</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y37.html" style=" text-align: center;">مبادئ تشغيل النظم الحديثة</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y38.html" style=" text-align: center;">تفاعل الانسان مع الحاسوب</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y39.html" style=" text-align: center;">هندسة متطلبات البرمجيات</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y310.html" style=" text-align: center;">معمارية وتصميم البرمجيات</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y311.html" style=" text-align: center;">مختبر هندسه البرمجيات</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y312.html" style=" text-align: center;">برمجية الخادم/المستفيد</option>
+                </select>
+            </div>
+        </form>
+        <script>
+            const dropdown5 = document.getElementById('dropdown5');
+            const dropdown6 = document.getElementById('dropdown6');
+
+            dropdown5.addEventListener('change', () => {
+                const selectedOption = dropdown5.value;
+                if (selectedOption !== '#') {
+                    window.location.href = selectedOption;
+                    dropdown5.value = '#';
+
+                }
+            });
+
+            dropdown6.addEventListener('change', () => {
+                const selectedOption = dropdown6.value;
+                if (selectedOption !== '#') {
+                    window.location.href = selectedOption;
+                    dropdown6.value = '#';
+                }
+            });
+        </script>
+
+        <!--/////////////////////////////////////////////////-->
+
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FD8F2D; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <div style="color: #FD8F2D; font-weight: bold; font-size: 24px; text-align: center ">  السنة الدراسية الرابعة</div>
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+
+        <form style="display: flex; justify-content:space-evenly; align-items: center; ">
+            <div style="background-color: #FD8F2D; padding: 10px; border-radius: 5px; margin-right: 10px; border: 2px solid #FD8F2D; ">
+                <select id="dropdown7" style="font-size: 18px; padding: 5px 10px; background-color: #FD8F2D; color: #FFEEDD; border: none; border-radius: 5px; font-size: 24px">
+                    <option style="text-align:center" value="#">الفصل الدراسي الأول</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y41.html" style=" text-align: center;">فحص البرمجيات </option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y42.html" style=" text-align: center;">أمن البرمجيات</option>
+
+                </select>
+            </div>
+
+            <div style="background-color: #FD8F2D;padding: 10px; border-radius: 5px; border: 2px solid #FD8F2D; ">
+                <select id="dropdown8" style="font-size: 18px; padding: 5px 10px; background-color: #FD8F2D; color: #FFEEDD; border: none; border-radius: 5px; font-size: 24px">
+                    <option value="#" style=" text-align: center;">الفصل الدراسي الثاني</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y43.html" style=" text-align: center;">هندسة تطبيقات الويب</option>
+                    <option value="#" disabled style="color: #FA7D10; text-align: center;">____________________</option>
+                    <option value="Y44.html" style=" text-align: center;">ادارة المشاريع</option>
+
+                </select>
+            </div>
+        </form>
+        <script>
+            const dropdown7 = document.getElementById('dropdown7');
+            const dropdown8 = document.getElementById('dropdown8');
+
+            dropdown7.addEventListener('change', () => {
+                const selectedOption = dropdown7.value;
+                if (selectedOption !== '#') {
+                    window.location.href = selectedOption;
+                    dropdown7.value = '#';
+                }
+            });
+
+            dropdown8.addEventListener('change', () => {
+                const selectedOption = dropdown8.value;
+                if (selectedOption !== '#') {
+                    window.location.href = selectedOption;
+                    dropdown8.value = '#';
+                }
+            });
+        </script>
+
+
+        <!--///////////////////////////////////////////////////////////////////////////////-->
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FD8F2D; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <button style="display: block; width: 50%; margin: 0 auto; font-size: 24px; font-weight: bold; color: #FFEEDD; background-color: #FD8F2D; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" onclick="document.location='group.html'">قروبات المواد</button>
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FD8F2D; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+
+
+
+        <div style="text-align: center; margin-top: 20px;">
+            <div style="display: flex; justify-content: center;">
+                <a href="https://www.facebook.com/groups/softwarian/?ref=share&mibextid=adzO7l" style="color: orange; font-size: 20px; margin-right: 10px;">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/softwarian?igsh=eGpxdTc5MWxqcXRt" style="color: orange; font-size: 20px; margin-right: 10px;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://t.me/SE_JUST_BOT" style="color: orange; font-size: 20px; margin-right: 10px;">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://youtube.com/channel/UCQ12MLtVnWdpxY9O0THe2Fg" style="color: orange; font-size: 20px;">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            <p style="color: orange; margin-top: 10px;">© 2024 جميع الحقوق محفوظة.</p>
+        </div>
+        <hr style="border: 2px solid #FD8F2D; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
+        
+        <span style="color: orange; font-size: 20px;">MADE BY: Hala Ali </span>
+        <a href="mailto:halaalifawwazmohammad@gmail.com" style="color: orange; font-size: 20px; margin-right: 10px;">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+</body>
+</html>
+     
