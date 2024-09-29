@@ -67,13 +67,18 @@
             الخطة التفاعلية
         </button>
 
-        <img id="dynamicImage" src="img/SE1.jpg" style="width: 50%; display: none; margin: 20px auto; opacity: 0; transform: translateY(-20px); transition: opacity 1s ease, transform 1s ease;" />
+        <a id="imageLink" href="https://softwariantree.com" style="display: none;">
+            <img id="dynamicImage" src="img/SE1.jpg" style="width: 50%; display: none; margin: 20px auto; opacity: 0; transform: translateY(-20px); transition: opacity 1s ease, transform 1s ease;" />
+        </a>
 
         <script>
             function toggleImage() {
                 const img = document.getElementById('dynamicImage');
+                const link = document.getElementById('imageLink');
+
                 if (img.style.display === 'none' || img.style.display === '') {
                     img.style.display = 'block';
+                    link.style.display = 'block'; 
                     setTimeout(() => {
                         img.style.opacity = 1;
                         img.style.transform = 'translateY(0)';
@@ -83,6 +88,7 @@
                     img.style.transform = 'translateY(-20px)';
                     setTimeout(() => {
                         img.style.display = 'none';
+                        link.style.display = 'none'; 
                     }, 1000);
                 }
             }
@@ -378,7 +384,7 @@
         <hr style="border: 2px solid #FD8F2D; width: 80%; margin: 20px auto;">
         <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
         <hr style="border: 2px solid #FFEEDD; width: 80%; margin: 20px auto;">
-        
+
         <span style="color: orange; font-size: 20px;">MADE BY: Hala Ali </span>
         <a href="mailto:halaalifawwazmohammad@gmail.com" style="color: orange; font-size: 20px; margin-right: 10px;">
             <i class="fas fa-envelope"></i>
